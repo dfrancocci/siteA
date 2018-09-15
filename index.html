@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Relax | Site A</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="w3v4.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            h1 {font-family: 'Abril Fatface', cursive; font-size: 96px;}
+            html, body, h2, h3, h4, h5, h6 {font-family: 'Cabin', sans-serif;}
+        </style>
+        <script>
+            function showMoreLess(hiddenPanelID, linkTextID, linkTextShow, linkTextHide) {
+                document.getElementById(hiddenPanelID).classList.toggle("w3-hide");
+                if (document.getElementById(linkTextID).innerHTML == linkTextShow) {
+                    document.getElementById(linkTextID).innerHTML = linkTextHide;
+                } else {
+                    document.getElementById(linkTextID).innerHTML = linkTextShow;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header class="w3-container w3-deep-orange">
+            <h1>Relax</h1>
+        </header>
+        <section class="w3-container w3-deep-orange">
+            <h2>Now you can look at cat pictures without your personal data being slurped up and flogged off to evil corporations</h2>
+        </section>
+        <img src="images/cat_in_chair.png" alt="Cat in a chair" style="width:100%">
+        <section class="w3-container">
+            <p>Yes, I love sitting in my armchair watching my black and white television. It's the same old three channels - lovely. I don't have to worry about my personal data being used to prop up some corrupt leader of western world.</p>
+        </section>
+        <section class="w3-container w3-indigo">
+            <h2>Terms and conditions</h2>
+            <p>What you need to agree to when you use this website.</p>
+            <button onclick="document.getElementById('termsandconditions').style.display='block'" class="w3-button w3-deep-orange">Show terms and conditions</button>
+            <div id="termsandconditions" class="w3-modal">
+                <div class="w3-modal-content">
+                    <div class="w3-container w3-dark-grey">
+                        <h3>Terms and conditions
+                            <span onclick="document.getElementById('termsandconditions').style.display='none'" class="w3-button w3-display-topright">&times;</span></h3>
+                    </div>
+                    <div class="w3-container w3-white">
+                        <p>Well, there aren't any, really. I'm not going to collect any of your personal data, and I'm not going to put any cookies on your device. There is no guarantee that this site will be here in the future, so if you depend on seeing cat pictures, you may have to look elsewhere. But then nothing lasts forever, does it?</p>
+                        <p>You don't have tick anything, because there is nothing to agree to.</p>
+                        <button onclick="document.getElementById('termsandconditions').style.display='none'" class="w3-button w3-center w3-deep-orange">OK - I get the picture</button>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+        </section>
+        <section class="w3-container w3-dark-grey">
+            <h2>Here are some of my cat friends</h2>
+            <div class="w3-row-padding">
+                <div class="w3-col s12 m6 l4 w3-center">
+                    <div class="w3-panel w3-card-4 w3-white">
+                        <p></p>
+                        <img src="/images/asbo.png" alt="Asbo" style="width:100%">
+                        <div class="w3-container w3-center">
+                            <p>Asbo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col s12 m6 l4 w3-center">
+                    <div class="w3-panel w3-card-4 w3-white">
+                        <p></p>
+                        <img src="/images/bootsy.png" alt="Bootsy" style="width:100%">
+                        <div class="w3-container w3-center">
+                            <p>Bootsy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col s12 m6 l4 w3-center">
+                     <div class="w3-panel w3-card-4 w3-white">
+                        <p></p>
+                        <img src="/images/cameron.png" alt="Cameron" style="width:100%">
+                        <div class="w3-container w3-center">
+                            <p>Cameron</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col s12 m6 l4 w3-center">
+                    <div class="w3-panel w3-card-4 w3-white">
+                        <p></p>
+                        <img src="/images/grey_cat.png" alt="Grey cat" style="width:100%">
+                        <div class="w3-container w3-center">
+                            <p>Grey cat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col s12 m6 l4 w3-center">
+                    <div class="w3-panel w3-card-4 w3-white">
+                        <p></p>
+                        <img src="/images/matey.png" alt="Matey" style="width:100%">
+                        <div class="w3-container w3-center">
+                            <p>Matey</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col s12 m6 l4 w3-center">
+                    <div class="w3-panel w3-card-4 w3-white">
+                        <p></p>
+                        <img src="/images/mr_burns.png" alt="Mr Burns" style="width:100%">
+                        <div class="w3-container w3-center">
+                            <p>Mr Burns</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w3-container w3-indigo">
+            <h2>Join the conversation</h2>
+            <p>You can discuss this site using Disqus</p>
+            <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://dfrancocci.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
+        <footer class="w3-container w3-deep-orange">
+            <h2>About this website</h2>
+            <p>This website was made by <a href="javascript:void(0)" onclick="document.getElementById('about').style.display='block'">Dominic Francocci</a> as a project to learn about HTML5, CSS, Javascript, AJAX, PHP, and MySQL.</p>
+            <div id="about" class="w3-modal">
+                <div class="w3-modal-content">
+                    <div class="w3-container w3-dark-grey">
+                        <h3>About me
+                            <span onclick="document.getElementById('about').style.display='none'" class="w3-button w3-display-topright">&times;</span></h3>
+                    </div>
+                    <img src="images/dfrancocci.png" alt="Dominic Francocci" style="width:100%">        
+                    <div class="w3-container w3-white">
+                        <p>Hello, I'm Dominic Francocci - part-time designer of websites, part-time dictator, lover of art, music, science, and philosophy.</p>
+                        <p>If you want to get in touch, join the conversation in the comments.</p>
+                        <button onclick="document.getElementById('about').style.display='none'" class="w3-button w3-center w3-deep-orange">OK - I've seen enough</button>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-hide" id="hiddenPanel1">
+                <p>The website is hosted by <a href="https://www.awardspace.com" target="_blank">AWARDSPACE.COM<span class="glyphicon glyphicon-new-window"></span></a> which is located in Bulgaria in the EU.</p>
+                <p>The HTML is handcrafted using the <a href="http://brackets.io" target="_blank">Brackets<span class="glyphicon glyphicon-new-window"></span></a> text editor on a Mac computer.</p>
+                <p>The CSS uses the <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS<span class="glyphicon glyphicon-new-window"></span></a> framework. This is the framework which W3Schools use to build their website, so it comes with lots of support, tutorials, and opportunities to try it out in their prototyping environment.</p>
+            </div>
+            <button onclick="showMoreLess('hiddenPanel1', 'linkText1', 'Show more', 'Show less')" class="w3-button w3-dark-grey" id="linkText1">Show more</button>
+            <p></p>
+        </footer>
+    </body>
+</html>
