@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Relax | Clock</title>
+        <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Jura', sans-serif; 
+            }
+            #day {
+                font-size: 36px;
+                font-weight: bold;
+            }
+            #date {
+                font-size: 28px;
+            }
+            #time {
+                font-size: 72px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='day'></div><br>
+        <div id='date'></div><br>
+        <div id='time'></div><br>
+        <div id='debug'></div>
+        <script> 
+            let urlParams = new URLSearchParams(window.location.search);
+            let locale = urlParams.get('locale');
+            const defaultLocale = 'en-GB';
+            const hour12Param12 = '12';
+            const on = 'on';
+            if (locale === null) {
+                locale = defaultLocale;
+            };
+            const dayOptions = { 
+                weekday: 'long',
+            };
+            const dateOptions = {  
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+            };
+            const timeOptions = {  
+                hour: 'numeric', 
+                minute: 'numeric',
+                hour12: false
+            };
+            let hour12Param = urlParams.get('hour12');
+            if (hour12Param === hour12Param12) {
+                timeOptions.hour12 = true;
+            };
+            let secondsParam = urlParams.get('seconds');
+            if (secondsParam === on) {
+                timeOptions.second = 'numeric';
+            };
+            const refreshRate=1000; // Refresh rate in milliseconds
+            let t = setInterval(displayClock, refreshRate);
+            function displayClock() {
+                let dateObj = new Date();
+                day.textContent = dateObj.toLocaleDateString(locale, dayOptions);
+                date.textContent = dateObj.toLocaleDateString(locale, dateOptions);
+                time.textContent = dateObj.toLocaleTimeString(locale, timeOptions);
+                debug.textContent = '';
+            };
+        </script>
+    </body>
+</html>
