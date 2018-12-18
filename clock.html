@@ -25,15 +25,40 @@
                 font-weight: 900;
                 color: white;
             }
+            #imgtitle {
+                font-size: 16px;
+                color: white;
+            }
         </style>
     </head>
     <body>
         
-        <div id='day'></div><br>
+        <div id='day'>Loading...</div><br>
         <div id='date'></div><br>
         <div id='time'></div><br>
-        <div id='debug'></div>
-        <script> 
+        <div id='imgtitle'></div>
+        <script>
+            const GET = 'GET';
+            const NASAurl = 'https://api.nasa.gov/planetary/apod';
+            const NASAquery = '?api_key=';
+            const NASAapikey = 'K3bhj7MJUTlPBfkKIbhTcOG5gCLXk94B1eswlTu7';
+            // Create a request variable and assign a new XMLHttpRequest object to it.
+            let request = new XMLHttpRequest();
+            // Open a new connection, using the GET request on the URL endpoint
+            request.open(GET, NASAurl + NASAquery + NASAapikey, true);
+            request.onload = function () {
+            // Begin accessing JSON data here
+                if (request.status >= 200 && request.status < 400) {
+                    let data = JSON.parse(this.responseText);
+                    document.body.style.backgroundImage = "url('" + data.url + "')";
+                    imgtitle.textContent = data.title;
+                } else {
+                    imgtitle.textContent = request.status;
+                }
+            };
+            // Send request
+            request.send();
+            // Get URL parameters
             let urlParams = new URLSearchParams(window.location.search);
             let locale = urlParams.get('locale');
             const defaultLocale = 'en-GB';
@@ -70,7 +95,6 @@
                 day.textContent = dateObj.toLocaleDateString(locale, dayOptions);
                 date.textContent = dateObj.toLocaleDateString(locale, dateOptions);
                 time.textContent = dateObj.toLocaleTimeString(locale, timeOptions);
-                debug.textContent = '';
             };
         </script>
     </body>
